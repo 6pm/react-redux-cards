@@ -3,6 +3,21 @@ import moment from 'moment'
 
 export default class Page extends Component {
 
+  componentWillUpdate() {
+      // remove class for animate cards
+      this.refs.CardsContainer.classList.remove('show')
+  }
+
+  componentDidUpdate() {
+    // remove class for animate cards
+    setTimeout(()=>{
+      this.refs.CardsContainer.classList.add('show')
+    }, 500)
+
+
+
+  }
+
   /**
    * format date
    *
@@ -19,8 +34,11 @@ export default class Page extends Component {
     let displayedCards =  cards.map((item, index) => {
 
       return (
-          <div className='col s12 m6' key={index}>
-            <div className='card'>
+          <div className='col s12 m6 card-item'
+               key={index}
+               style={{transitionDelay: `0.${index}s`}}
+          >
+            <div className='card' >
               <div className='card-content'>
                 <h5 className='col s12 card-title header'>
                   <span>{item.direction.from}</span> - <span>{item.direction.to}</span>
@@ -61,7 +79,7 @@ export default class Page extends Component {
       titleCards = ''
     }
 
-    return  <div className='cards-container'>
+    return  <div className='cards-container' ref='CardsContainer'>
               {titleCards}
               {displayedCards}
             </div>

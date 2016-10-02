@@ -74,3 +74,21 @@ body {
   display: inline-block;
   min-width: 90px;
 }
+
+.hide .card-item {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.card-item {
+  opacity: 0;
+  top: -30px;
+  -webkit-transition: opacity 0.3s, top 0.5s;
+  -moz-transition: opacity 0.3s, top 0.5s;
+  -ms-transition: opacity 0.3s, top 0.5s;
+  -o-transition: opacity 0.3s, top 0.5s;
+  transition: opacity 0.3s, top 0.5s;
+}
+.show .card-item {
+  top: 0;
+  opacity: 1;
+}
