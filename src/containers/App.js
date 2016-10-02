@@ -46,8 +46,10 @@ class App extends Component {
    * @return (Array) - selected cards. If 'name' = 'all' - returns all cards
    */
   filterByCarrierName(data, name) {
+    // get all cards
     if(name === 'all') return data
 
+    // filter by name
     let result = []
 
     for(let key in data) {
@@ -78,7 +80,6 @@ class App extends Component {
 
     // convert to array
     let unique =  Object.keys(carriers).map(key => carriers[key])
-
 
     return  unique.map((item, index) => {
       return (

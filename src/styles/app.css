@@ -47,26 +47,41 @@ body {
 .rc-select-selection--single .rc-select-selection__rendered:focus {
   outline: none;
 }
-/*------------------*/
+/* end styles for custom select */
+
+/* Cards component*/
 .cards-container {
   float: left;
   width: 100%;
   margin-bottom: 20px;
 }
-
 .header {
   color: #ee6e73;
   font-weight: 300;
 }
-
 .component-cards-title {
   color: #555;
   margin-bottom: 20px;
 }
-
 .card-title.header {
   margin: 0;
 }
+/* End Cards component*/
+
+/* animations for cards */
+.card-item {
+  opacity: 0;
+  top: -30px;
+  position: relative;
+  transition: opacity 0.3s, top 0.5s;
+}
+.show .card-item {
+  top: 0;
+  opacity: 1;
+}
+/* end animations for cards */
+
+/* helpers */
 .bolder {
   font-weight: 600;
 }
@@ -74,21 +89,4 @@ body {
   display: inline-block;
   min-width: 90px;
 }
-
-.hide .card-item {
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-.card-item {
-  opacity: 0;
-  top: -30px;
-  -webkit-transition: opacity 0.3s, top 0.5s;
-  -moz-transition: opacity 0.3s, top 0.5s;
-  -ms-transition: opacity 0.3s, top 0.5s;
-  -o-transition: opacity 0.3s, top 0.5s;
-  transition: opacity 0.3s, top 0.5s;
-}
-.show .card-item {
-  top: 0;
-  opacity: 1;
-}
+/* end helpers */

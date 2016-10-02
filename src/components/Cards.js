@@ -1,7 +1,14 @@
 import React, { PropTypes, Component } from 'react'
-import moment from 'moment'
+import moment from 'moment' // for manipulation with dates
 
-export default class Page extends Component {
+const ANIMATION_DELAY = 500
+
+export default class Cards extends Component {
+
+  static propTypes = {
+    name: PropTypes.string.isRequired,
+    cards: PropTypes.array.isRequired
+  }
 
   componentWillUpdate() {
       // remove class for animate cards
@@ -9,13 +16,10 @@ export default class Page extends Component {
   }
 
   componentDidUpdate() {
-    // remove class for animate cards
+    // add class for animate cards
     setTimeout(()=>{
       this.refs.CardsContainer.classList.add('show')
-    }, 500)
-
-
-
+    }, ANIMATION_DELAY)
   }
 
   /**
@@ -35,12 +39,12 @@ export default class Page extends Component {
 
       return (
           <div className='col s12 m6 card-item'
-               key={index}
                style={{transitionDelay: `0.${index}s`}}
+               key={index}
           >
-            <div className='card' >
+            <div className='card'>
               <div className='card-content'>
-                <h5 className='col s12 card-title header'>
+                <h5 className='card-title header'>
                   <span>{item.direction.from}</span> - <span>{item.direction.to}</span>
                 </h5>
 
@@ -72,9 +76,9 @@ export default class Page extends Component {
 
     let titleCards;
     if (name.length > 0) {
-      titleCards = <h5 className='component-cards-title col s12'>Find <span>{cards.length}</span> results in carrier:
-                "<span>{name}</span>"
-              </h5>;
+      titleCards =  <h5 className='component-cards-title col s12'>Find <span>{cards.length}</span> results in carrier:
+                      "<span>{name}</span>"
+                    </h5>;
     } else {
       titleCards = ''
     }
@@ -85,9 +89,4 @@ export default class Page extends Component {
             </div>
   }
 
-}
-
-Page.propTypes = {
-  name: PropTypes.string.isRequired,
-  cards: PropTypes.array.isRequired
 }
