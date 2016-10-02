@@ -1,0 +1,76 @@
+body {
+  background-color: #fcfcfc;
+}
+
+/* styles for custom select */
+.select-carrier {
+  width: auto;
+  max-width: 455px;
+  margin: 40px auto;
+  display: table;
+  padding: 14px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+  border-radius: 3px;
+}
+.select-carrier--header {
+  float: left;
+  color: #ee6e73;
+  font-weight: 300;
+}
+.select-carrier--description {
+  float: left;
+}
+
+.select-carrier .rc-select {
+  min-width: 250px;
+  float: left;
+  clear: none;
+  margin: 13px 0 0 5px;
+}
+.rc-select-focused .rc-select-selection {
+  border-color: #ee6e73;
+  box-shadow: none;
+}
+
+.rc-select-selection {
+  background-color: transparent;
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid #444;
+}
+.rc-select-enabled .rc-select-selection:hover,
+.rc-select-enabled .rc-select-selection:active {
+  border-color: #ee6e73;
+  box-shadow: none;
+}
+.rc-select-selection--single .rc-select-selection__rendered:focus {
+  outline: none;
+}
+/*------------------*/
+.cards-container {
+  float: left;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.header {
+  color: #ee6e73;
+  font-weight: 300;
+}
+
+.component-cards-title {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.card-title.header {
+  margin: 0;
+}
+.bolder {
+  font-weight: 600;
+}
+.miw90 {
+  display: inline-block;
+  min-width: 90px;
+}
